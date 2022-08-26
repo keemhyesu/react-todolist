@@ -5,21 +5,24 @@ import TodoHead from "./components/TodoHead";
 import TodoItem from "./components/TodoItem";
 import TodoTemplate from "./components/TodoTemplate";
 import TodoList from "./components/TodoList";
+import { TodoProvider } from "./components/TodoProvider";
 
 const GlobalStyle = createGlobalStyle`
 body{
   background: gray;
 }
 `;
+
 function App() {
   return (
-    <>
+    <TodoProvider>
       <GlobalStyle />
       <TodoTemplate>
         <TodoHead />
         <TodoList />
+        <TodoCreate />
       </TodoTemplate>
-    </>
+    </TodoProvider>
   );
 }
 
